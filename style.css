@@ -1,0 +1,106 @@
+body {
+  background-color: #faf4ea;
+  font-family: 'Rosario', sans-serif;
+  color: #49241f;
+  margin: 0;
+  padding: 30px;
+  position: relative;
+  overflow-x: auto;
+}
+
+.titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  text-align: center;
+  color: #bd4829;
+  margin-bottom: 40px;
+}
+
+.grid-malla-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.grid-malla {
+  display: grid;
+  grid-template-columns: repeat(10, 180px);
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  width: max-content;
+}
+
+.columna {
+  background-color: #99c2c6;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.columna h2 {
+  text-align: center;
+  font-size: 18px;
+  color: #49241f;
+  margin-bottom: 10px;
+}
+
+.ramo {
+  background-color: #fae1ce;
+  color: #49241f;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 6px 0;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Rosario', sans-serif;
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.ramo.aprobado {
+  background-color: #f4a590;
+  color: white;
+  font-weight: bold;
+}
+
+.ramo[data-bloqueado="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ramo:hover:not([data-bloqueado="true"]) {
+  transform: scale(1.03);
+}
+
+.ramo.destacado {
+  box-shadow: 0 0 10px #f4a590;
+  transform: scale(1.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.bloque-extra {
+  margin-top: 40px;
+}
+
+.bloque-extra h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #bd4829;
+}
+
+.fuego-artificial {
+  position: fixed;
+  z-index: 9999;
+  border-radius: 50%;
+  background-color: gold;
+  box-shadow: 0 0 10px gold, 0 0 20px gold;
+  animation: estallar 0.9s ease-out forwards;
+}
+
+@keyframes estallar {
+  0% { transform: scale(0.6); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
+}
